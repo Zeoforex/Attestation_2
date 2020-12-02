@@ -9,15 +9,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class GroupDao implements Dao<Group>{
+public class GroupDao implements Dao<Group> {
 
     private List<Group> groups = new ArrayList<>();
 
-    public GroupDao(){
+    public GroupDao() {
 
     }
 
-    public Group findById(int id){
+    public Group findById(int id) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Group group = session.get(Group.class, id);
         session.close();
@@ -36,7 +36,7 @@ public class GroupDao implements Dao<Group>{
     }
 
     @Override
-    public void save(Group group){
+    public void save(Group group) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
         session.save(group);
@@ -54,7 +54,7 @@ public class GroupDao implements Dao<Group>{
     }
 
     @Override
-    public void delete(Group group){
+    public void delete(Group group) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
         session.delete(group);

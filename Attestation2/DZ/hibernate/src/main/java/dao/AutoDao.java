@@ -10,15 +10,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class AutoDao implements Dao<Auto>{
+public class AutoDao implements Dao<Auto> {
 
     private List<Auto> autos = new ArrayList<>();
 
-    public AutoDao(){
+    public AutoDao() {
 
     }
 
-    public Auto findById(int id){
+    public Auto findById(int id) {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Auto.class, id);
     }
 
@@ -53,7 +53,7 @@ public class AutoDao implements Dao<Auto>{
     }
 
     @Override
-    public void delete(Auto auto){
+    public void delete(Auto auto) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
         session.delete(auto);

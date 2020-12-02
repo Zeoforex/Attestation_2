@@ -13,11 +13,11 @@ public class QuestionDao implements Dao<Question> {
 
     private List<Question> questions = new ArrayList<>();
 
-    public QuestionDao(){
+    public QuestionDao() {
 
     }
 
-    public Question findById(int id){
+    public Question findById(int id) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Question question = session.get(Question.class, id);
         session.close();
@@ -36,7 +36,7 @@ public class QuestionDao implements Dao<Question> {
     }
 
     @Override
-    public void save(Question question){
+    public void save(Question question) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
         session.save(question);
@@ -54,7 +54,7 @@ public class QuestionDao implements Dao<Question> {
     }
 
     @Override
-    public void delete(Question question){
+    public void delete(Question question) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
         session.delete(question);

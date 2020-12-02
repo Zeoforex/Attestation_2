@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="answer")
+@Table(name = "answer")
 public class Answer {
 
     @Id
@@ -23,9 +23,10 @@ public class Answer {
     @ManyToOne(fetch = FetchType.LAZY)
     private StudentAnswer studentAnswer;
 
-    public Answer(){}
+    public Answer() {
+    }
 
-    public Answer(String text, Boolean correct){
+    public Answer(String text, Boolean correct) {
         this.text = text;
         this.correct = correct;
     }

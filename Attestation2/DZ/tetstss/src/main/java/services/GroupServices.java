@@ -8,25 +8,26 @@ import java.util.List;
 public class GroupService {
     private GroupDao groupDao = new GroupDao();
 
-    public GroupService(){}
+    public GroupService() {
+    }
 
-    public Group findGroup(int id){
+    public Group findGroup(int id) {
         return groupDao.findById(id);
     }
 
-    public void saveGroup(Group group){
+    public void saveGroup(Group group) {
         groupDao.save(group);
     }
 
-    public void updateGroup(Group group){
+    public void updateGroup(Group group) {
         groupDao.update(group);
     }
 
-    public void deleteGroup(Group group){
+    public void deleteGroup(Group group) {
         groupDao.delete(group);
     }
 
-    public List<Group> findAllGroups(){
+    public List<Group> findAllGroups() {
         return groupDao.getAll();
     }
 

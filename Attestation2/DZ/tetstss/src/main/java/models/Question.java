@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="question")
+@Table(name = "question")
 public class Question {
 
     @Id
@@ -24,9 +24,10 @@ public class Question {
     @OneToOne(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
     private Answer answer;
 
-    public Question(){}
+    public Question() {
+    }
 
-    public Question(String text, int score, Boolean active){
+    public Question(String text, int score, Boolean active) {
         this.text = text;
         this.score = score;
         this.active = active;

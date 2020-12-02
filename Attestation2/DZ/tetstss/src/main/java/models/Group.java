@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="group")
+@Table(name = "group")
 public class Group {
 
     @Id
@@ -24,9 +24,10 @@ public class Group {
     @OneToMany(mappedBy = "group", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Schedule> scheduleList = new ArrayList<>();
 
-    public Group(){}
+    public Group() {
+    }
 
-    public Group(String name, int year, int semester){
+    public Group(String name, int year, int semester) {
         this.name = name;
         this.year = year;
         this.semester = semester;
@@ -68,12 +69,12 @@ public class Group {
         this.studentList = studentList;
     }
 
-    public void addUser(User user){
+    public void addUser(User user) {
         user.setGroup(this);
         studentList.add(user);
     }
 
-    public void removeStudent(User student){
+    public void removeStudent(User student) {
         studentList.remove(student);
     }
 
@@ -85,12 +86,12 @@ public class Group {
         this.scheduleList = scheduleList;
     }
 
-    public void addSchedule(Schedule schedule){
+    public void addSchedule(Schedule schedule) {
         schedule.setGroup(this);
         scheduleList.add(schedule);
     }
 
-    public void removeSchedule(Schedule schedule){
+    public void removeSchedule(Schedule schedule) {
         scheduleList.remove(schedule);
     }
 

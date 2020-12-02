@@ -13,11 +13,11 @@ public class AnswerDao implements Dao<Answer> {
 
     private List<Answer> answers = new ArrayList<>();
 
-    public AnswerDao(){
+    public AnswerDao() {
 
     }
 
-    public Answer findById(int id){
+    public Answer findById(int id) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Answer answer = session.get(Answer.class, id);
         session.close();
@@ -36,7 +36,7 @@ public class AnswerDao implements Dao<Answer> {
     }
 
     @Override
-    public void save(Answer answer){
+    public void save(Answer answer) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
         session.save(answer);
@@ -54,7 +54,7 @@ public class AnswerDao implements Dao<Answer> {
     }
 
     @Override
-    public void delete(Answer answer){
+    public void delete(Answer answer) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
         session.delete(answer);

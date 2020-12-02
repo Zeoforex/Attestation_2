@@ -12,7 +12,7 @@ public class User {
     private int id;
 
     //Можно не указывать column если совпадает с названием столбца
-    @Column(name="name")
+    @Column(name = "name")
     private String name;
 
     private int age;
@@ -21,23 +21,22 @@ public class User {
     private List<Auto> autos;
 
 
+    public User() {
+    }
 
 
-
-    public User(){}
-
-
-    public User(String name, int age){
+    public User(String name, int age) {
         this.name = name;
         this.age = age;
         autos = new ArrayList<Auto>();
     }
-    public void addAuto(Auto auto){
+
+    public void addAuto(Auto auto) {
         auto.setUser(this);
         autos.add(auto);
     }
 
-    public void removeAuto(Auto auto){
+    public void removeAuto(Auto auto) {
         autos.remove(auto);
     }
 

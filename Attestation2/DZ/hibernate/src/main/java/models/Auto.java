@@ -15,12 +15,13 @@ public class Auto {
 
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="user_id")
+    @JoinColumn(name = "user_id")
     private User user;
 
-    public Auto(){}
+    public Auto() {
+    }
 
-    public Auto(String model, String color){
+    public Auto(String model, String color) {
         this.color = color;
         this.model = model;
     }
