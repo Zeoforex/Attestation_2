@@ -1,6 +1,6 @@
-package dao;
+package Attestation2.Attestation2.DZ.tetstss.src.main.java.dao;
 
-import models.Group;
+import models.Test;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import utils.HibernateSessionFactoryUtil;
@@ -9,55 +9,55 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class GroupDao implements Dao<Group> {
+public class Test implements Dao<Test> {
 
-    private List<Group> groups = new ArrayList<>();
+    private List<Test> tests = new ArrayList<>();
 
-    public GroupDao() {
+    public Test(){
 
     }
 
-    public Group findById(int id) {
+    public Test findById(int id){
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Group group = session.get(Group.class, id);
+        Test test = session.get(Test.class, id);
         session.close();
-        return group;
+        return test;
     }
 
     @Override
-    public Optional<Group> get(int id) {
-        return Optional.ofNullable(groups.get((int) id));
+    public Optional<Test> get(int id) {
+        return Optional.ofNullable(tests.get((int) id));
     }
 
     @Override
-    public List<Group> getAll() {
+    public List<Test> getAll() {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        return (List<Group>) session.createQuery("From Group").list();
+        return (List<Test>) session.createQuery("From Test").list();
     }
 
     @Override
-    public void save(Group group) {
+    public void save(Test test){
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.save(group);
+        session.save(test);
         tx1.commit();
         session.close();
     }
 
     @Override
-    public void update(Group group) {
+    public void update(Test test) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.update(group);
+        session.update(test);
         tx1.commit();
         session.close();
     }
 
     @Override
-    public void delete(Group group) {
+    public void delete(Test test){
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.delete(group);
+        session.delete(test);
         tx1.commit();
         session.close();
     }

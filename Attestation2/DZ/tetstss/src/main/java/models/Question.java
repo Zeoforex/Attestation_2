@@ -1,5 +1,4 @@
-package models;
-
+package Attestation2.Attestation2.DZ.tetstss.src.main.java.models;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
